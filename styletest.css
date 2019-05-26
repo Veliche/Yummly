@@ -28,41 +28,34 @@ h3 {
 }
 /* Navigation */
 
-.logo-name {
-	font-size: 1.5em;
-	margin: 0;
-}
-.logo-name a,
 .main-nav a {
 	text-align: center;
 	display: block;
 }
 .main-nav a {
-	font-size: .70em;
+	font-size: .80em;
 	text-transform: uppercase;
 	font-weight: 800;
 }
-.logo-name a {
-    font-family: 'Pacifico', cursive;
-    color: hsl(27, 100%, 50%)
+.nav-button {
+	padding-top: 30px;
+}
+.logo {
+	padding-top: 25px;
 }
 .main-header {
-	padding: 28px 15px 0 15px;
+	height: 4.3em;
 }
 .main-header,
 .main-nav,
 .main-nav li {
 	display: flex;
 }
-.logo-name {
-	margin-bottom: 10px;
-}
 .main-nav {
-	margin-top: 5px;
-	flex: 1.5;
-	justify-content: space-around;
+	flex: 1;
+	justify-content: space-evenly;
 }
-.main-nav a:focus {
+.main-nav a.nav-button:focus {
 	border-bottom: 3px solid #329775;
 	color: #3a3a3a;
 	font-weight: 800;
@@ -73,6 +66,7 @@ header{
 	background: white;
 	display: flex;
 	flex-direction: column;
+	z-index: 2;
 }
 .last-personalized-bar {
 	background: #3a3a3ade;
@@ -92,6 +86,12 @@ header{
 }
 
 /* Main section*/
+.parallax-container{
+	height: 400px;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+}
 .main-section {
 	margin-top: 100px;
 }
@@ -100,25 +100,39 @@ header{
 .banner-container {
 	height: 400px;
 	display: flex;
+	background: url(images/bourbon_chicken.jpg) center;
+	flex: 1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1;
 }
 .ingredients-list {
 	flex: 0 0 50%;
 	display: flex;
 	flex-direction: column;
-	overflow-y: scroll;
+	position: relative;
 }
 .add-to-recipe-list-row {
-	position: fixed;
+	position: absolute;
 	display: flex;
 	justify-content: space-between;
-	padding: 20px;
 	font-weight: 800;
 	color: #cecccc;
 	background: #fff;
-	width: inherit;
+	width: 100%;
 }
-.add-all-to {
+.add-all-to-link {
 	font-size: 0.7em;
+	align-self: center;
+	padding-left: 20px;
+}
+.add-all-tolist-btn{
+	padding: 20px;
+}
+.addto-shoppinglist-btn{
+	padding: 20px;
 }
 .link-to-list {
 	color: #329775;
@@ -127,14 +141,16 @@ header{
 	margin-top: 56px;
 	display: flex;
 	flex-direction: column;
+	overflow-y: scroll;
 }
 .recipe-item {
 	display: flex;
 	justify-content: space-between;
-	padding: 20px;
 }
 .recipe-item div:first-child {
 	font-size: 0.7em;
+	align-self: center;
+	padding-left: 20px;
 }
 .recipe-item i {
 	color: #329775;
@@ -144,9 +160,24 @@ header{
 }
 /*banner*/
 .banner {
-	flex: 1 1 auto;
+	flex: 1;
 	display: flex;
-	background: url('images/bourbon_chicken.jpg') center;
+	justify-content: space-between;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.group-labels {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-right: auto;
+}
+.meal-type {
+	font-family: 'Cormorant Garamond', serif;
+	font-style: italic;
+	background: beige;
+	padding: 4px 20px;
+	margin: 10px 0 0 1px;
+	align-self: flex-start;
 }
 .dish-title {
 	align-self: flex-end;
@@ -170,14 +201,12 @@ header{
 .yum-button {
 	display: flex;
 	align-items: center;
-	background: #e16120;
 	color: white;
 	width: 3em;
 	height: 3em;
 	border-radius: 50%;
-	box-shadow: 0px 0px 3px 3px #888888;
 	margin-bottom: 5px;
-
+	padding-left: 10px;
 }
 .yum-button img {
 	width: 3em;
@@ -185,12 +214,16 @@ header{
 .number-likes-icon {
 	align-self: flex-end;
 	background: white;
-	padding: 9px;
 	border-radius: 50%;
 	font-size: 0.7em;
-	z-index: 5;
-	margin-left: -9px;
 	color: #888888;
+	height: 2.5em;
+	width: 2.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hide;
+	overflow: hidden;
 }
 .recipe-button {
 	align-self: center;
@@ -203,13 +236,33 @@ header{
 .wrap-title-and-buttoms {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 }
 .top-buttoms {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
 }
-
+.show-yums-button {
+	height: 2em;
+	width: 2em;
+	background: #329775;
+	color: #fff;
+	border-radius: 50% 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 15px 8px 10px 0;
+}
+.show-list-buttom{
+	height: 3em;
+	width: 3em;
+	background: #e2dede;
+	border-radius: 50% 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 /* Footer */
 .main-footer {
 	display: flex;
@@ -220,16 +273,16 @@ header{
 	height: 4em;
 	background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 	color: white;
+	z-index: 2;
 }
 
 .main-footer div {
 	display: flex;
-	margin-top: 30px;
 }
 .main-footer div a {
 	display: block;
 	text-align: center;
-	padding: 0 5px;
+	padding: 25px 15px 0 15px;
 }
 .main-footer div a:focus {
   border-bottom: 3px solid #329775;
